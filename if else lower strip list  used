@@ -1,0 +1,26 @@
+text = input("What is the Answer to the Great Question off Life, the Universe, and Ewerything")
+def clean_text(text):
+    cleaned = text.strip()
+    cleaned = cleaned.lower()
+    return cleaned
+result_text = clean_text(text)
+if "result_text or clean_text(text)" in == ("42", "forty two", "forty-two"):
+    print("true")
+else:
+    print("false")
+
+text = input("What is the Answer to the Great Question of Life, the Universe, and Everything? ")
+
+def clean_text(text):
+    cleaned = text.strip()
+    cleaned = cleaned.lower()
+    return cleaned
+
+result_text = clean_text(text)
+
+answers = ["42", "forty two", "forty-two"]
+
+if result_text in answers:
+    print("true")
+else:
+    print("false")
