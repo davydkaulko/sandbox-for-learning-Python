@@ -1,1 +1,54 @@
-
+@Problem Set 1
+/Deep Thought 1
+/Start
+text = input("What is the Answer to the Great Question of Life, the Universe, and Everything? ")
+def clean_text(text):
+    cleaned = text.strip()
+    cleaned = cleaned.lower()
+    return cleaned
+result_text = clean_text(text)
+answers = ["42", "forty two", "forty-two"]
+if result_text in answers:
+    print("true")
+else:
+    print("false")
+/END
+/Home Federal Savings Bank 2
+/Start
+text = input("Greeting:")
+def clean_text(text):
+    cleaned = text.strip()
+    cleaned = cleaned.lower()
+    return cleaned
+cleartext = clean_text(text)
+if cleartext.startswith("hello"):
+      print("0$") 
+elif cleartext.startswith("h"):
+    print("20$")
+else:
+  print("100$")
+/END
+/File Extensions 3 
+#get info
+text = input("yout file:")
+#clean
+def clean_text(text):
+    cleaned = text.strip().lower()
+    return cleaned
+cleartext = clean_text(text)
+#check for .
+if '.' in cleartext:
+    extension = cleartext.rsplit('.', 1)[-1]
+#extension 
+    if extension in ["gif", "jpeg", "png"]:
+        print(f"image/{extension}")
+    elif extension in ["zip", "pdf"]:
+        print(f"application/{extension}")
+    elif extension in ["txt"]:
+        print("text/plain")
+    elif extension in ["jpg"]:
+        print("image/jpeg")    
+    else:
+        print("application/octet-stream")
+else:
+    print("application/octet-stream")
