@@ -53,7 +53,7 @@ if '.' in cleartext:
 else:
     print("application/octet-stream")
 /END
-/Math Interpreter  (with some changes frome me)
+/Math Interpreter 4 (with some changes frome me)
 text = input("")
 x, y, z = text.split()
 x = int(x)
@@ -79,5 +79,19 @@ elif y == "**" :
 else :
   print  ("unknown operator or invalid input")
 /END
-
-
+/Meal Time 5 
+text = input("What time is it? ")
+def main():
+    a, b, c, d, e = text.strip()
+    return
+def convert(time):
+pmoram = cleartext.rsplit('str()', 1)[-1] 
+if pmoram == "a" :
+    
+elif pmoram == "p" :
+elif there is no letter last:
+else :
+    print ("letter didn't support")
+    return
+if __name__ == "__main__":
+    main()
