@@ -125,3 +125,66 @@ def convert(text):
 # entry point: run main() only if file is executed directly
 if __name__ == "__main__":
     main()
+
+/Meal Time 5* (*=adwanced)
+
+# get user input, expected format: "7:30"
+text = input("What time is it? ")
+def main():
+    # convert string time → float hours (e.g. "7:30" → 7.5)
+    convertedtext = convert(text) 
+    # check meal time ranges (inclusive)
+    if 7 <= convertedtext <= 8: 
+        print("breakfast time")
+    elif 12 <= convertedtext <= 13:
+        print("lunch time")
+    elif 18 <= convertedtext <= 19:
+        print("dinner time")
+    else:
+        # not required by task, but useful for debugging
+        print("It’s not time for a meal")
+    return
+def convert(text):
+    # remove extra spaces
+    clear = text.strip().lower()
+
+    # remove dots to unify formats: p.m. → pm
+    clear = clear.replace(".", "")
+
+    # split time into hours and minutes → ["7", "30"]
+    if "am" in clear:
+        clear = clear.replace("am", "")
+        dividedtext = clear.split(":")
+        a = int(dividedtext[0])  # hours
+        b = int(dividedtext[1])  # minutes
+
+        # special case: 12am → 0
+        if a == 12:
+            a = 0
+
+    elif "pm" in clear:
+        clear = clear.replace("pm", "")
+        dividedtext = clear.split(":")
+        a = int(dividedtext[0])  # hours
+        b = int(dividedtext[1])  # minutes
+
+        # add 12 hours except 12pm
+        if a != 12:
+            a = a + 12
+
+    else:
+        dividedtext = clear.split(":")
+        a = int(dividedtext[0])  # hours
+        b = int(dividedtext[1])  # minutes
+
+    # convert to float format
+    hours = float(a)
+    minutes = b / 60
+
+    # combine into one float value (e.g. 7.5)
+    sumhoursminutes = hours + minutes
+
+    return sumhoursminutes
+# entry point: run main() only if file is executed directly
+if __name__ == "__main__":
+    main()
