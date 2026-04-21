@@ -79,30 +79,49 @@ elif y == "**" :
 else :
   print  ("unknown operator or invalid input")
 /END
-/Meal Time 5 
-text = input("What time is it? ") # тут как то нужно сделать чтобы он брал цифры и понимал что часы что минуты а что буквы опираясь на : 
+/Meal Time 5
+# get user input, expected format: "7:30"
+text = input("What time is it? ")
+
 def main():
-    if 7 <= convert(text) <= 8 : 
-        print ("breakfast time")
-    elif 12 <= convert(text) <= 13 :
-        print ("lunch time")
-    elif  18 <= convert(text) <= 19 :
-        print ("dinner time")
-    else :
-        print ("It’s not time for a meal")
+    # convert string time → float hours (e.g. "7:30" → 7.5)
+    convertedtext = convert(text) 
+
+    # check meal time ranges (inclusive)
+    if 7 <= convertedtext <= 8: 
+        print("breakfast time")
+    elif 12 <= convertedtext <= 13:
+        print("lunch time")
+    elif 18 <= convertedtext <= 19:
+        print("dinner time")
+    else:
+        # not required by task, but useful for debugging
+        print("It’s not time for a meal")
+
     return
-def convert(text): #pm or am тут бля буду проверять есть ли там буква и если есть то ам дает ноль к часам а пм дает +12ч
+
+
+def convert(text):
+    # remove extra spaces
     clear = text.strip()
+
+    # split time into hours and minutes → ["7", "30"]
     dividedtext = clear.split(":")
-    a = int(dividedtext[0])
-    b = int(dividedtext[1])
-    hours = (float(a))
-    minutes = (float(b / 60))
+
+    # convert both parts to integers
+    a = int(dividedtext[0])  # hours
+    b = int(dividedtext[1])  # minutes
+
+    # convert to float format
+    hours = float(a)
+    minutes = float(b / 60)
+
+    # combine into one float value (e.g. 7.5)
     sumhoursminutes = hours + minutes
+
     return sumhoursminutes
-    
-    #pmoram = cleartext.rsplit('str()', 1)[-1]     
-#    def check(time): 
 
-  # это нужно чтобы вызвать функции сначало оно определяло часы минуты а потом делило и тут уже в завсимости от часов и минут будет развилка если от такого времени до такого то будет такой ответ если иначе ничего не будет напечатать 
 
+# entry point: run main() only if file is executed directly
+if __name__ == "__main__":
+    main()
