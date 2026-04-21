@@ -80,18 +80,29 @@ else :
   print  ("unknown operator or invalid input")
 /END
 /Meal Time 5 
-text = input("What time is it? ")
+text = input("What time is it? ") # тут как то нужно сделать чтобы он брал цифры и понимал что часы что минуты а что буквы опираясь на : 
 def main():
-    a, b, c, d, e = text.strip()
+    if 7 <= convert(text) <= 8 : 
+        print ("breakfast time")
+    elif 12 <= convert(text) <= 13 :
+        print ("lunch time")
+    elif  18 <= convert(text) <= 19 :
+        print ("dinner time")
+    else :
+        print ("It’s not time for a meal")
     return
-def convert(time):
-pmoram = cleartext.rsplit('str()', 1)[-1] 
-if pmoram == "a" :
+def convert(text): #pm or am тут бля буду проверять есть ли там буква и если есть то ам дает ноль к часам а пм дает +12ч
+    clear = text.strip()
+    dividedtext = clear.split(":")
+    a = int(dividedtext[0])
+    b = int(dividedtext[1])
+    hours = (float(a))
+    minutes = (float(b / 60))
+    sumhoursminutes = hours + minutes
+    return sumhoursminutes
     
-elif pmoram == "p" :
-elif there is no letter last:
-else :
-    print ("letter didn't support")
-    return
-if __name__ == "__main__":
-    main()
+    #pmoram = cleartext.rsplit('str()', 1)[-1]     
+#    def check(time): 
+
+  # это нужно чтобы вызвать функции сначало оно определяло часы минуты а потом делило и тут уже в завсимости от часов и минут будет развилка если от такого времени до такого то будет такой ответ если иначе ничего не будет напечатать 
+
