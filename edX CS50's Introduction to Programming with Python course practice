@@ -230,3 +230,33 @@ for char in clean:
        result += char  
 print(result)
 /END
+/Vanity Plates 4
+/Start
+plate = input("Plate: ")
+numberofsymbols = len(plate)
+def main():
+    if is_valid(plate) == True :
+        print("Valid")
+    else:
+        print("Invalid")
+def is_valid(plate):
+    if not plate[0:2].isalpha():
+       return False  
+    if not (2 <= len(plate) <= 6):
+         return False    
+    found_digit = False
+    for char in plate:
+        if char.isdigit():
+            if not found_digit:
+                if char == "0":
+                    return False
+                found_digit = True
+        else:
+            if found_digit:
+                return False
+        
+    if not plate.isalnum():
+         return False  
+    return True 
+if __name__ == "__main__" :
+ main()
