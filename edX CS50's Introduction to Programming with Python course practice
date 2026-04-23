@@ -1,4 +1,4 @@
-@Problem Set 1
+/@Problem Set 1
 /Deep Thought 1
 /Start
 text = input("What is the Answer to the Great Question of Life, the Universe, and Everything? ")
@@ -188,3 +188,21 @@ def convert(text):
 # entry point: run main() only if file is executed directly
 if __name__ == "__main__":
     main()
+/End
+
+/@Problem Set 2
+/camelCase 1
+/Start
+dirtytext = input("")
+withoutspace = dirtytext.strip()
+result = ""
+
+for char in withoutspace:
+    if char.isupper():
+        result += "_" + char.lower()
+    else:
+        result += char.lower()
+/End
+
+
+print(result)
