@@ -203,6 +203,17 @@ for char in withoutspace:
     else:
         result += char.lower()
 /End
-
-
-print(result)
+/Coke Machine
+/Start
+amountdue = 50
+while amountdue > 0:
+    print("Amount due:", amountdue)
+    number = input()
+    number = int(number)
+    if number in [10, 25, 5]:
+        amountdue -= number
+        if amountdue <= 0:
+            print("Change Owed:", abs(amountdue))
+            break
+    else:
+     continue
