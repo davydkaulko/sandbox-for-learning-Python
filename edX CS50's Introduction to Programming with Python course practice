@@ -327,4 +327,39 @@ while True:
 /END
 /Grocery List 3 
 /Start
+# Dictionary to store items and their counts
+listofitems = {}
+
+# Infinite loop to continuously accept user input
+while True:
+    try:
+        item = input("")
+
+        # Normalize input: remove extra spaces
+        cleartext = item.strip()
+
+        value = listofitems[item]
+        
+        # Ignore empty input
+        if cleartext == "":
+            continue
+   
+        # If item already exists → increment count
+        if cleartext in listofitems:
+            listofitems[cleartext] += 1
+        else:
+            # If item is new → initialize with count = 1
+            listofitems[cleartext] = 1
+
+    # Exit loop on EOF (Ctrl+D)
+    except EOFError:
+        break
+
+
+# Iterate over items sorted alphabetically by key
+for item in sorted(listofitems):
+
+    # Print count and item name in uppercase
+    print(value, item.upper())
+
     
