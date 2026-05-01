@@ -330,36 +330,29 @@ while True:
 # Dictionary to store items and their counts
 listofitems = {}
 
-# Infinite loop to continuously accept user input
+# Input loop
 while True:
     try:
         item = input("")
+        cleartext = item.strip().lower()
 
-        # Normalize input: remove extra spaces
-        cleartext = item.strip()
-
-        value = listofitems[item]
-        
         # Ignore empty input
         if cleartext == "":
             continue
-   
-        # If item already exists → increment count
+
+        # Update dictionary
         if cleartext in listofitems:
             listofitems[cleartext] += 1
         else:
-            # If item is new → initialize with count = 1
             listofitems[cleartext] = 1
 
-    # Exit loop on EOF (Ctrl+D)
     except EOFError:
         break
 
-
-# Iterate over items sorted alphabetically by key
+# Output sorted result
 for item in sorted(listofitems):
-
-    # Print count and item name in uppercase
+    value = listofitems[item]
     print(value, item.upper())
-
-    
+/END
+/Grocery List 3 
+/Start    
